@@ -4,8 +4,8 @@ module colon_display_tb (
 
 reg [10:0] pixel_x;
 reg [9:0] pixel_y;
-reg pixel_on;
-wire expected_on;
+wire pixel_on;
+reg expected_on;
 
 // Instantiate with correct box corner
 colon_display #(.X_BOX(11'd700), .Y_BOX(10'd72)) colon_display_test (
@@ -30,7 +30,7 @@ initial begin
     $display("actual %b, expected %b", pixel_on, expected_on);
 
     // Pixel in the middle, on the colon
-    pixel_x = 11'd710;
+    pixel_x = 11'd708;
     pixel_y = 10'd100;
     expected_on = 1'b1;
     #10

@@ -5,7 +5,7 @@ module color_tb (
 reg [1:0] pixel_type;
 reg [1:0] instrument_type;
 wire [7:0] r, g, b;
-wire [23:0] expected_color;
+reg [23:0] expected_color;
 
 color color_test (
     .pixel_type(pixel_type),

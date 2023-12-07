@@ -4,6 +4,13 @@ May 24 2019
 15:06:07
 C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/modules/avg_pix.v,1701986402,verilog,,C:/Users/evelynan/Desktop/iScore/tests/avg_pix_tb.v,,avg_pix,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/modules/char_display.v,1701986515,verilog,,C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v,,char_display,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/modules/colon_display.v,1701986602,verilog,,C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v,,colon_display,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/modules/color.v,1701986621,verilog,,C:/Users/evelynan/Desktop/iScore/tests/color_tb.v,,color,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/modules/scale.v,1701986731,verilog,,C:/Users/evelynan/Desktop/iScore/tests/scale_tb.v,,scale,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v,1701985057,verilog,,C:/Users/evelynan/Desktop/iScore/tests/char_display_tb.v,,tcgrom,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/tests/avg_pix_tb.v,1701991999,verilog,,,,avg_pix_tb,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/tests/char_display_tb.v,1701993354,verilog,,,,char_display_tb,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/tests/colon_display_tb.v,1701993177,verilog,,,,colon_display_tb,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/tests/color_tb.v,1701992223,verilog,,,,color_tb,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/tests/scale_tb.v,1701990891,verilog,,,,scale_tb,,,,,,,,

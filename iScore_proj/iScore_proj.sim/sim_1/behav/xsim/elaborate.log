@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot avg_pix_tb_behav xil_defaultlib.avg_pix_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot char_display_tb_behav xil_defaultlib.char_display_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -8,7 +8,8 @@ Starting simulation data flow analysis
 WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.avg_pix
-Compiling module xil_defaultlib.avg_pix_tb
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b01011000,...
+Compiling module xil_defaultlib.char_display_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot avg_pix_tb_behav
+Built simulation snapshot char_display_tb_behav

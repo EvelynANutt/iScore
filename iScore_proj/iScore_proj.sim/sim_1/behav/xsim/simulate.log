@@ -1,5 +1,7 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-actual 00, expected 00
-actual fd, expected fd
-actual 7d, expected 7d
+actual 0, expected 0
+actual 0, expected 0
+actual 1, expected 1
+actual 0, expected 0
+actual 0, expected 0

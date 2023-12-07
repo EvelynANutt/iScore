@@ -5,8 +5,8 @@ module char_display_tb (
 reg [10:0] pixel_x;
 reg [9:0] pixel_y;
 reg [8:0] rom_base_addr;
-reg pixel_on;
-wire expected_on;
+wire pixel_on;
+reg expected_on;
 
 // Instantiate with first letter box corner
 char_display #(.X_BOX(11'd88), .Y_BOX(10'd32)) char_display_test (
