@@ -1,11 +1,8 @@
-`define HALF 3'd2;
-`define QUARTER 3'd4;
-
 module anti_aliasing (
     input wire [10:0] x,
     input wire [9:0] y,
     output reg [7:0] r_new, g_new, b_new
-)
+);
 
 wire [7:0] original_r, original_g, original_b,
     top_left_r, top_left_g, top_left_b,
@@ -20,6 +17,9 @@ wire [7:0] original_r, original_g, original_b,
 wire [7:0] red_a, red_b, red_c, red_d, red_e, red_f, red_g, red_h,
     green_a, green_b, green_c, green_d, green_e, green_f, green_g, green_h,
     blue_a, blue_b, blue_c, blue_d, blue_e, blue_f, blue_g, blue_h;
+    
+parameter HALF = 3'd2;
+parameter QUARTER = 3'd4;
 
 // original pixel
 display_pixel original_pixel (
@@ -31,8 +31,10 @@ display_pixel original_pixel (
 );
 
 // top-left pixel
-assign wire [10:0] top_left_x = x - 1'b1;
-assign wire [9:0] top_left_y = y - 1'b1;
+wire [10:0] top_left_x = x - 1'b1;
+wire [9:0] top_left_y = y - 1'b1;
+assign top_left_x = x - 1'b1;
+assign top_left_y = y - 1'b1;
 
 display_pixel top_left_pixel (
     .x(top_left_x),
@@ -42,14 +44,14 @@ display_pixel top_left_pixel (
     .b(top_left_b)
 );
 
-scale #(.DENOM(`QUARTER)) top_left_scale (
+scale #(QUARTER) top_left_scale (
     .r_in(top_left_r),
     .g_in(top_left_g),
     .b_in(top_left_b),
     .r_out(red_a),
     .g_out(green_a),
     .b_out(blue_a)
-)
+);
 
 // top-middle pixel
 assign wire [9:0] top_middle_y = y - 1'b1;
@@ -62,7 +64,7 @@ display_pixel top_middle_pixel (
     .b(top_middle_b)
 );
 
-scale #(.DENOM(`HALF)) top_middle_scale (
+scale #(HALF) top_middle_scale (
     .r_in(top_middle_r),
     .g_in(top_middle_g),
     .b_in(top_middle_b),
