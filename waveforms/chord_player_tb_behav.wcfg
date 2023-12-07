@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="chord_player_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="chord_player_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1969733333333fs"></ZoomStartTime>
+      <ZoomEndTime time="2034133333334fs"></ZoomEndTime>
+      <Cursor1Time time="2040900000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="179"></NameColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/chord_player_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/play_enable" type="logic">
+      <obj_property name="ElementShortName">play_enable</obj_property>
+      <obj_property name="ObjectShortName">play_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/generate_next_sample" type="logic">
+      <obj_property name="ElementShortName">generate_next_sample</obj_property>
+      <obj_property name="ObjectShortName">generate_next_sample</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/playing_notes" type="array">
+      <obj_property name="ElementShortName">playing_notes[3:0][5:0]</obj_property>
+      <obj_property name="ObjectShortName">playing_notes[3:0][5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/instrument" type="array">
+      <obj_property name="ElementShortName">instrument[1:0]</obj_property>
+      <obj_property name="ObjectShortName">instrument[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/volume" type="array">
+      <obj_property name="ElementShortName">volume[2:0]</obj_property>
+      <obj_property name="ObjectShortName">volume[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/new_sample_ready" type="logic">
+      <obj_property name="ElementShortName">new_sample_ready</obj_property>
+      <obj_property name="ObjectShortName">new_sample_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/sample_out" type="array">
+      <obj_property name="ElementShortName">sample_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_out[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/SIMULTANEOUS_NOTES" type="array">
+      <obj_property name="ElementShortName">SIMULTANEOUS_NOTES[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SIMULTANEOUS_NOTES[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/NOTE_BITS" type="array">
+      <obj_property name="ElementShortName">NOTE_BITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NOTE_BITS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/chord_player_tb/cp/sample_out_big" type="array">
+      <obj_property name="ElementShortName">sample_out_big[17:0]</obj_property>
+      <obj_property name="ObjectShortName">sample_out_big[17:0]</obj_property>
+      <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+      <obj_property name="CellHeight">100</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

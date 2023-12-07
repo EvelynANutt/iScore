@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="song_reader_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="song_reader_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+<<<<<<< HEAD
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1678000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+=======
+      <ZoomStartTime time="17255416666fs"></ZoomStartTime>
+      <ZoomEndTime time="17674916667fs"></ZoomEndTime>
+      <Cursor1Time time="17598417000fs"></Cursor1Time>
+>>>>>>> 6a0211c425f480a363401515ec42c98f7c1ae4de
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="134"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+<<<<<<< HEAD
+   <WVObjectSize size="8" />
+=======
+   <WVObjectSize size="9" />
+>>>>>>> 6a0211c425f480a363401515ec42c98f7c1ae4de
+   <wvobject fp_name="/song_reader_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/song" type="array">
+      <obj_property name="ElementShortName">song[1:0]</obj_property>
+      <obj_property name="ObjectShortName">song[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/note" type="array">
+      <obj_property name="ElementShortName">note[5:0]</obj_property>
+      <obj_property name="ObjectShortName">note[5:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/duration" type="array">
+      <obj_property name="ElementShortName">duration[6:0]</obj_property>
+      <obj_property name="ObjectShortName">duration[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/song_done" type="logic">
+      <obj_property name="ElementShortName">song_done</obj_property>
+      <obj_property name="ObjectShortName">song_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/song_reader_tb/new_note" type="logic">
+      <obj_property name="ElementShortName">new_note</obj_property>
+      <obj_property name="ObjectShortName">new_note</obj_property>
+   </wvobject>
+<<<<<<< HEAD
+=======
+   <wvobject fp_name="/song_reader_tb/beat" type="logic">
+      <obj_property name="ElementShortName">beat</obj_property>
+      <obj_property name="ObjectShortName">beat</obj_property>
+   </wvobject>
+>>>>>>> 6a0211c425f480a363401515ec42c98f7c1ae4de
+   <wvobject fp_name="/song_reader_tb/sr/note_index" type="array">
+      <obj_property name="ElementShortName">note_index[6:0]</obj_property>
+      <obj_property name="ObjectShortName">note_index[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
