@@ -54,7 +54,8 @@ scale #(QUARTER) top_left_scale (
 );
 
 // top-middle pixel
-assign wire [9:0] top_middle_y = y - 1'b1;
+wire [9:0] top_middle_y;
+assign top_middle_y = y - 1'b1;
 
 display_pixel top_middle_pixel (
     .x(x),
@@ -74,8 +75,10 @@ scale #(HALF) top_middle_scale (
 );
 
 // top-right pixel
-assign wire [10:0] top_right_x = x + 1'b1;
-assign wire [9:0] top_right_y = y - 1'b1;
+wire [10:0] top_right_x;
+wire [9:0] top_right_y;
+assign top_right_x = x + 1'b1;
+assign top_right_y = y - 1'b1;
 
 display_pixel top_right_pixel (
     .x(top_right_x),
@@ -85,7 +88,7 @@ display_pixel top_right_pixel (
     .b(top_right_b)
 );
 
-scale #(.DENOM(`QUARTER)) top_right_scale (
+scale #(QUARTER) top_right_scale (
     .r_in(top_right_r),
     .g_in(top_right_g),
     .b_in(top_right_b),
@@ -95,7 +98,8 @@ scale #(.DENOM(`QUARTER)) top_right_scale (
 );
 
 // right pixel
-assign wire [10:0] right_x = x + 1'b1;
+wire [10:0] right_x;
+assign right_x = x + 1'b1;
 
 display_pixel right_pixel (
     .x(right_x),
@@ -105,7 +109,7 @@ display_pixel right_pixel (
     .b(right_b)
 );
 
-scale #(.DENOM(`HALF)) right_scale (
+scale #(HALF) right_scale (
     .r_in(right_r),
     .g_in(right_g),
     .b_in(right_b),
@@ -115,8 +119,10 @@ scale #(.DENOM(`HALF)) right_scale (
 );
 
 // bottom-right pixel
-assign wire [10:0] bottom_right_x = x + 1'b1;
-assign wire [9:0] bottom_right_y = y + 1'b1;
+wire [10:0] bottom_right_x;
+wire [9:0] bottom_right_y;
+assign bottom_right_x = x + 1'b1;
+assign bottom_right_y = y + 1'b1;
 
 display_pixel bottom_right_pixel (
     .x(bottom_right_x),
@@ -126,7 +132,7 @@ display_pixel bottom_right_pixel (
     .b(bottom_right_b)
 );
 
-scale #(.DENOM(`QUARTER)) bottom_right_scale (
+scale #(QUARTER) bottom_right_scale (
     .r_in(bottom_right_r),
     .g_in(bottom_right_g),
     .b_in(bottom_right_b),
@@ -136,7 +142,8 @@ scale #(.DENOM(`QUARTER)) bottom_right_scale (
 );
 
 // bottom-middle pixel
-assign wire [9:0] bottom_middle_y = y + 1'b1;
+wire [9:0] bottom_middle_y;
+assign bottom_middle_y = y + 1'b1;
 
 display_pixel bottom_middle_pixel (
     .x(x),
@@ -146,7 +153,7 @@ display_pixel bottom_middle_pixel (
     .b(bottom_middle_b)
 );
 
-scale #(.DENOM(`HALF)) bottom_middle_scale (
+scale #(HALF) bottom_middle_scale (
     .r_in(bottom_middle_r),
     .g_in(bottom_middle_g),
     .b_in(bottom_middle_b),
@@ -156,8 +163,10 @@ scale #(.DENOM(`HALF)) bottom_middle_scale (
 );
 
 // bottom-left pixel
-assign wire [10:0] bottom_left_x = x - 1'b1;
-assign wire [9:0] bottom_left_y = y + 1'b1;
+wire [10:0] bottom_left_x;
+wire [9:0] bottom_left_y;
+assign bottom_left_x = x - 1'b1;
+assign bottom_left_y = y + 1'b1;
 
 display_pixel bottom_left_pixel (
     .x(bottom_left_x),
@@ -167,7 +176,7 @@ display_pixel bottom_left_pixel (
     .b(bottom_left_b)
 );
 
-scale #(.DENOM(`QUARTER)) bottom_left_scale (
+scale #(QUARTER) bottom_left_scale (
     .r_in(bottom_left_r),
     .g_in(bottom_left_g),
     .b_in(bottom_left_b),
@@ -177,7 +186,8 @@ scale #(.DENOM(`QUARTER)) bottom_left_scale (
 );
 
 // left pixel
-assign wire [10:0] left_x = x - 1'b1;
+wire [10:0] left_x;
+assign left_x = x - 1'b1;
 
 display_pixel left_pixel (
     .x(left_x),
@@ -187,7 +197,7 @@ display_pixel left_pixel (
     .b(left_b)
 );
 
-scale #(.DENOM(`HALF)) left_scale (
+scale #(HALF) left_scale (
     .r_in(left_r),
     .g_in(left_g),
     .b_in(left_b),

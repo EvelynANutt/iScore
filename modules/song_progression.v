@@ -4,8 +4,8 @@ module song_progression #(parameter X_COORD = 11'd820, Y_COORD = 10'd72, BOX_WID
     input wire reset_player, song_done, play, clk, rst,
     input wire [10:0] x,
     input wire [9:0] y,
-    output wire pixel_on,
-)
+    output wire pixel_on
+);
 
 wire [`SWIDTH-1:0] time_ns, next_time_ns, time_select;
 dffre #(`SWIDTH) count_ns(.clk(clk), .r(rst), .en(play), .d(time_select), .q(time_ns));

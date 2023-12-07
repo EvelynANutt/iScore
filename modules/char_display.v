@@ -3,9 +3,10 @@ module char_display #(parameter X_BOX = 11'd0, Y_BOX = 10'd0) (
     input wire [9:0] pixel_y,
     input wire [8:0] rom_base_addr,
     output wire pixel_on
-)
+);
 
-wire [10:0] relative_x, flip_relative_x;
+wire [10:0] relative_x;
+reg [10:0] flip_relative_x;
 assign relative_x = (pixel_x - X_BOX) / 11'd5;
 
 always @(*) begin
@@ -28,6 +29,8 @@ assign relative_y = (pixel_y - Y_BOX) / 10'd5;
 
 wire [8:0] char_row_addr;
 assign char_row_addr = relative_y + rom_base_addr;
+
+wire [7:0] row_data;
 
 tcgrom get_char(
     .addr(char_row_addr),

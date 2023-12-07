@@ -8,7 +8,7 @@ module title_display #(parameter X_COORD = 11'd88, Y_COORD = 10'd32, BOX_WIDTH =
     input wire [8:0] char1, char2, char3, char4, char5,
         char6, char7, char8, char9, char10, char11, char12,
     output wire pixel_on
-)
+);
 
 wire char1_on, char2_on, char3_on, char4_on, char5_on, char6_on, char7_on,
     char8_on, char9_on, char10_on, char11_on, char12_on;

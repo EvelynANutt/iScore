@@ -1,9 +1,9 @@
 module color (
     input wire [1:0] pixel_type, instrument_type,
     output reg [7:0] r, g, b
-)
+);
 
-wire [2:0] color_choice;
+reg [2:0] color_choice;
 
 always @(*) begin
     case(pixel_type)

@@ -11,12 +11,16 @@ module counter_flop_tb (
     reg [3:0] count_enable_out_2;
     wire pixel_on;
     wire pixel_on_2;
-    wire [3:0] expected_count_ms;
-    wire [3:0] expected_count_hs;
+    reg [3:0] expected_count_ms;
+    reg [3:0] expected_count_hs;
+    
+    parameter X_BOX = 11'd820;
+    parameter Y_BOX = 10'd72;
+    parameter COUNT_SIZE = 5'd20;
 
     // Need to test 2 cases for when we need the ns count and when we don't
     
-    counter_flop #(.X_BOX(11'820), .Y_BOX(10'd72), .COUNT_SIZE(5'd20)) ms_test (
+    counter_flop #(X_BOX, Y_BOX, COUNT_SIZE) ms_test (
         .count_enable_in(count_enable_in),
         .clk(clk),
         .rst(rst),
@@ -24,9 +28,9 @@ module counter_flop_tb (
         .y(y),
         .count_enable_out(count_enable_out),
         .pixel_on(pixel_on)
-    )
+    );
 
-    counter_flop #(.X_BOX(11'770), .Y_BOX(10'd72), .COUNT_SIZE(5'd4)) hs_test (
+    counter_flop #(X_BOX - 11'd50, Y_BOX, COUNT_SIZE - 5'd16) hs_test (
         .count_enable_in(count_enable_out),
         .clk(clk),
         .rst(rst),
@@ -34,7 +38,7 @@ module counter_flop_tb (
         .y(y),
         .count_enable_out(count_enable_out_2),
         .pixel_on(pixel_on_2)
-    )
+    );
 
 
     initial begin
@@ -49,11 +53,10 @@ module counter_flop_tb (
         x = 1'b0;
         y = 1'b0;
         count_enable_in = 1'b0;
-        count_enable_in_2 = 1'b0;
         expected_count_ms = 4'd0;
         expected_count_hs = 4'd0;
         #10;
-        reset = 1'b0;
+        rst = 1'b0;
         
         /* For the ms clock, we should check that the count is going up every 999999ns or so
         Let's wait that long and check for a 1. */

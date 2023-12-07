@@ -16,7 +16,7 @@ module song_progression_tb (
         .x(x),
         .y(y),
         .pixel_on(pixel_on)
-    )    
+    );
 
     initial begin
         forever #5 clk = ~clk;
@@ -34,7 +34,7 @@ module song_progression_tb (
         y = 10'd0;
 
         #10;
-        reset = 1'b0;
+        rst = 1'b0;
         song_done = 1'b0;
         play = 1'b1;
         x = 11'd848;
