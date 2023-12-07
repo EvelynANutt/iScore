@@ -4,7 +4,7 @@ module avg_pix_tb (
 
 reg [7:0] a,b,c,d,e,f,g,h,orig;
 reg [7:0] new_color;
-wire [7:0] expected_color;
+reg [7:0] expected_color;
 
 avg_pix avg_pix_test (
     .a(a),

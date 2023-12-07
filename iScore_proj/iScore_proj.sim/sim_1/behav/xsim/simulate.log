@@ -1,0 +1,14 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+actual half 000000, expected half 000000, actual quarter 000000, expected quarter 000000
+actual half 7f0000, expected half 7f0000, actual quarter 3f0000, expected quarter 3f0000
+actual half 007f00, expected half 007f00, actual quarter 003f00, expected quarter 003f00
+actual half 00007f, expected half 00007f, actual quarter 00003f, expected quarter 00003f
+actual half 003f3f, expected half 003f3f, actual quarter 001f1f, expected quarter 001f1f
+actual half 7f7f7f, expected half 7f7f7f, actual quarter 3f3f3f, expected quarter 3f3f3f
+actual half 000000, expected half 000000, actual quarter 000000, expected quarter 000000
+actual half 7f0000, expected half 7f0000, actual quarter 3f0000, expected quarter 3f0000
+actual half 007f00, expected half 007f00, actual quarter 003f00, expected quarter 003f00
+actual half 00007f, expected half 00007f, actual quarter 00003f, expected quarter 00003f
+actual half 003f3f, expected half 003f3f, actual quarter 001f1f, expected quarter 001f1f
+actual half 7f7f7f, expected half 7f7f7f, actual quarter 3f3f3f, expected quarter 3f3f3f

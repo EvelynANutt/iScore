@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/scale.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scale
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/scale_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module scale_tb

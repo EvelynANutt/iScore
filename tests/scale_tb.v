@@ -3,14 +3,14 @@ module scale_tb (
 );
 
 reg [7:0] r_in, g_in, b_in;
-reg [7:0] r_out, g_out, b_out;
-wire [23:0] expected_color;
+wire [7:0] r_out, g_out, b_out;
+reg [23:0] expected_color;
 
-reg [7:0] r_out2, g_out2, b_out2;
-wire [23:0] expected_color_2;
+wire [7:0] r_out2, g_out2, b_out2;
+reg [23:0] expected_color_2;
 
 // Test both half and quarter scaling
-scale #(.DENOM(3'd2)) half_test (
+scale #(3'd2) half_test (
     .r_in(r_in),
     .g_in(g_in),
     .b_in(b_in),
@@ -18,7 +18,7 @@ scale #(.DENOM(3'd2)) half_test (
     .g_out(g_out),
     .b_out(b_out)
 );
-scale #(.DENOM(3'd4)) quarter_test (
+scale #(3'd4) quarter_test (
     .r_in(r_in),
     .g_in(g_in),
     .b_in(b_in),
