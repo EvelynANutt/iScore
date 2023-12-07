@@ -1,11 +1,11 @@
-`include "modules/constants.v"
+`include "constants.v"
 
 module notes_rom(
     input [1:0] noteType,
     input [4:0] addr,
     output reg [`NOTE_WIDTH-1:0] data
 );
-    always @(noteType, addr)
+    always @(addr)
         case (noteType)
             `QUARTER_NOTE: case (addr)
                 5'd00: data = 28'b0000000000000111111111110000;
@@ -32,6 +32,7 @@ module notes_rom(
                 5'd21: data = 28'b0111111111111111111000000000;
                 5'd22: data = 28'b0011111111111111100000000000;
                 5'd23: data = 28'b0000111111111110000000000000;
+                default: data = 28'b0;
             endcase
             `HALF_NOTE: case (addr)
                 5'd00: data = 28'b0000000000000111111111110000;
@@ -58,6 +59,7 @@ module notes_rom(
                 5'd21: data = 28'b0111111111111111111000000000;
                 5'd22: data = 28'b0011111111111111100000000000;
                 5'd23: data = 28'b0000111111111110000000000000;
+                default: data = 28'b0;
             endcase
             `WHOLE_NOTE: case (addr)
                 5'd00: data = 28'b0000000011111111111100000000;
@@ -84,7 +86,9 @@ module notes_rom(
                 5'd21: data = 28'b0000111111111111111111110000;
                 5'd22: data = 28'b0000001111111111111111000000;
                 5'd23: data = 28'b0000000011111111111100000000;
+                default: data = 28'b0;
             endcase
+            default: data = 28'b0;
         endcase
 
 endmodule

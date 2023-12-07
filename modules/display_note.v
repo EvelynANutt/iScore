@@ -1,9 +1,12 @@
-`include "modules/constants.v"
+`include "constants.v"
 
 module display_note #(parameter
+    SCREEN_WIDTH = 0, // Width of screen in pixels
     SCREEN_HEIGHT = 0, // Height of screen in pixels
     SCREEN_WIDTH_BITS = 0, // Number of bits for width of the screen
     SCREEN_HEIGHT_BITS = 0, // Number of bits for height of the screen
+    DISPLAYED_BEATS = 0, // Number of beats displayed on the screen
+    BEAT_DURATION = 0, // Duration of a beat in beat48
     BEAT_BITS = 0, // Number of bits for the current beat in a song
     NOTE_BITS = 0, // Number of bits for a note
     BEAT_WIDTH = 0 // Width of a beat in pixels
@@ -11,11 +14,10 @@ module display_note #(parameter
     input wire [SCREEN_WIDTH_BITS-1:0] x, // Requested x coordinate
     input wire [SCREEN_HEIGHT_BITS-1:0] y, // Requested y coordinate
     input wire [NOTE_BITS-1:0] note, // Note number
-    input wire [BEAT_BITS-1:0] start_beat, // Beat number of start of note
+    input wire [BEAT_BITS-1:0] ran_for, // Beat number of start of note
     input wire [BEAT_BITS-1:0] duration, // Duration of the note in beats
     output wire on // Whether the note is on the requested pixel
 );
-    localparam DISPLAYED_NOTES = NOTE_BITS+2*BEAT_BITS;
     localparam LINE_DIFF = SCREEN_HEIGHT / 20;
     localparam HALF_LINE_DIFF = LINE_DIFF >> 1;
     localparam LINE_3_Y = SCREEN_HEIGHT >> 1;
@@ -24,25 +26,81 @@ module display_note #(parameter
     localparam LINE_2_Y = LINE_3_Y + LINE_DIFF;
     localparam LINE_1_Y = LINE_2_Y + LINE_DIFF;
     localparam DOT_SPACING = LINE_DIFF / 3;
+    localparam HALF_NOTE_WIDTH = `NOTE_WIDTH >> 1;
+    localparam RAN_FOR_TO_WIDTH = BEAT_WIDTH / BEAT_DURATION;
 
-    wire [SCREEN_WIDTH_BITS-1:0] noteX = start_beat * BEAT_WIDTH + (BEAT_WIDTH >> 1);
+    // Divide by BEAT_DURATION (16) and round up (3 beats per second)
+    wire [BEAT_BITS-1:0] beat_duration = (duration + 4'd15) >> 4;
+    wire [SCREEN_WIDTH_BITS-1:0] noteX = SCREEN_WIDTH - (ran_for * RAN_FOR_TO_WIDTH) + (BEAT_WIDTH >> 1) - HALF_NOTE_WIDTH;
+    wire onDisplay = ran_for > 1'b0 && ran_for < DISPLAYED_BEATS * BEAT_DURATION;
+    
     reg [SCREEN_HEIGHT_BITS-1:0] noteY;
     always @(*) begin
         case (note)
-            1: noteY = LINE_1_Y + LINE_DIFF;
-            2: noteY = LINE_1_Y + HALF_LINE_DIFF;
-            3: noteY = LINE_1_Y;
-            4: noteY = LINE_1_Y - HALF_LINE_DIFF;
-            5: noteY = LINE_2_Y;
-            6: noteY = LINE_2_Y - HALF_LINE_DIFF;
-            7: noteY = LINE_3_Y;
-            8: noteY = LINE_3_Y - HALF_LINE_DIFF;
-            9: noteY = LINE_4_Y;
-            10: noteY = LINE_4_Y - HALF_LINE_DIFF;
-            11: noteY = LINE_5_Y;
-            12: noteY = LINE_5_Y - HALF_LINE_DIFF;
-            13: noteY = LINE_5_Y - LINE_DIFF;
-            14: noteY = LINE_5_Y - LINE_DIFF - HALF_LINE_DIFF;
+            1: noteY = LINE_1_Y + 17 * HALF_LINE_DIFF;
+            2: noteY = LINE_1_Y + 17 * HALF_LINE_DIFF;
+            3: noteY = LINE_1_Y + 16 * HALF_LINE_DIFF;
+            4: noteY = LINE_1_Y + 15 * HALF_LINE_DIFF;
+            5: noteY = LINE_1_Y + 15 * HALF_LINE_DIFF;
+            6: noteY = LINE_1_Y + 14 * HALF_LINE_DIFF;
+            7: noteY = LINE_1_Y + 14 * HALF_LINE_DIFF;
+            8: noteY = LINE_1_Y + 13 * HALF_LINE_DIFF;
+            9: noteY = LINE_1_Y + 12 * HALF_LINE_DIFF;
+            10: noteY = LINE_1_Y + 12 * HALF_LINE_DIFF;
+            11: noteY = LINE_1_Y + 11 * HALF_LINE_DIFF;
+            12: noteY = LINE_1_Y + 11 * HALF_LINE_DIFF;
+            13: noteY = LINE_1_Y + 10 * HALF_LINE_DIFF;
+            14: noteY = LINE_1_Y + 10 * HALF_LINE_DIFF;
+            15: noteY = LINE_1_Y + 9 * HALF_LINE_DIFF;
+            16: noteY = LINE_1_Y + 8 * HALF_LINE_DIFF;
+            17: noteY = LINE_1_Y + 8 * HALF_LINE_DIFF;
+            18: noteY = LINE_1_Y + 7 * HALF_LINE_DIFF;
+            19: noteY = LINE_1_Y + 7 * HALF_LINE_DIFF;
+            20: noteY = LINE_1_Y + 6 * HALF_LINE_DIFF;
+            21: noteY = LINE_1_Y + 5 * HALF_LINE_DIFF;
+            22: noteY = LINE_1_Y + 5 * HALF_LINE_DIFF;
+            23: noteY = LINE_1_Y + 4 * HALF_LINE_DIFF;
+            24: noteY = LINE_1_Y + 4 * HALF_LINE_DIFF;
+            25: noteY = LINE_1_Y + 3 * HALF_LINE_DIFF;
+            26: noteY = LINE_1_Y + 3 * HALF_LINE_DIFF;
+            27: noteY = LINE_1_Y + 2 * HALF_LINE_DIFF;
+            28: noteY = LINE_1_Y + HALF_LINE_DIFF;
+            29: noteY = LINE_1_Y + HALF_LINE_DIFF;
+            30: noteY = LINE_1_Y;
+            31: noteY = LINE_1_Y;
+            32: noteY = LINE_1_Y - HALF_LINE_DIFF;
+            33: noteY = LINE_2_Y;
+            34: noteY = LINE_2_Y;
+            35: noteY = LINE_2_Y - HALF_LINE_DIFF;
+            36: noteY = LINE_2_Y - HALF_LINE_DIFF;
+            37: noteY = LINE_3_Y;
+            38: noteY = LINE_3_Y;
+            39: noteY = LINE_3_Y - HALF_LINE_DIFF;
+            40: noteY = LINE_4_Y;
+            41: noteY = LINE_4_Y;
+            42: noteY = LINE_4_Y - HALF_LINE_DIFF;
+            43: noteY = LINE_4_Y - HALF_LINE_DIFF;
+            44: noteY = LINE_5_Y;
+            45: noteY = LINE_5_Y - HALF_LINE_DIFF;
+            46: noteY = LINE_5_Y - HALF_LINE_DIFF;
+            47: noteY = LINE_5_Y - 2 * HALF_LINE_DIFF;
+            48: noteY = LINE_5_Y - 2 * HALF_LINE_DIFF;
+            49: noteY = LINE_5_Y - 3 * HALF_LINE_DIFF;
+            50: noteY = LINE_5_Y - 3 * HALF_LINE_DIFF;
+            51: noteY = LINE_5_Y - 4 * HALF_LINE_DIFF;
+            52: noteY = LINE_5_Y - 5 * HALF_LINE_DIFF;
+            53: noteY = LINE_5_Y - 5 * HALF_LINE_DIFF;
+            54: noteY = LINE_5_Y - 6 * HALF_LINE_DIFF;
+            55: noteY = LINE_5_Y - 6 * HALF_LINE_DIFF;
+            56: noteY = LINE_5_Y - 7 * HALF_LINE_DIFF;
+            57: noteY = LINE_5_Y - 8 * HALF_LINE_DIFF;
+            58: noteY = LINE_5_Y - 8 * HALF_LINE_DIFF;
+            59: noteY = LINE_5_Y - 9 * HALF_LINE_DIFF;
+            60: noteY = LINE_5_Y - 9 * HALF_LINE_DIFF;
+            61: noteY = LINE_5_Y - 10 * HALF_LINE_DIFF;
+            62: noteY = LINE_5_Y - 10 * HALF_LINE_DIFF;
+            63: noteY = LINE_5_Y - 11 * HALF_LINE_DIFF;
+            default: noteY = 0;
         endcase
     end
     
@@ -53,7 +111,7 @@ module display_note #(parameter
     reg hasStem;
     reg hasDot;
     always @(*) begin
-        case(duration)
+        case (beat_duration)
             1: {noteType, hasStem, hasDot} = {`QUARTER_NOTE, 1'b1, 1'b0};
             2: {noteType, hasStem, hasDot} = {`HALF_NOTE, 1'b1, 1'b0};
             3: {noteType, hasStem, hasDot} = {`HALF_NOTE, 1'b1, 1'b1};
@@ -98,8 +156,9 @@ module display_note #(parameter
     );
     wire onDotGraphic = dotRomData[`DOT_WIDTH - dotRomX - 1];
 
-    assign on = note && (
+    assign on = note && onDisplay && (
         (onNote && onNoteGraphic)
         || (hasStem && onStem)
-        || (hasDot && onDot && onDotGraphic));
+        || (hasDot && onDot && onDotGraphic)
+    );
 endmodule
