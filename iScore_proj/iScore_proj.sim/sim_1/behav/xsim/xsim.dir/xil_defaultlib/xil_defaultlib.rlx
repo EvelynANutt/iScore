@@ -3,5 +3,7 @@
 May 24 2019
 15:06:07
 C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/modules/avg_pix.v,1701986402,verilog,,C:/Users/evelynan/Desktop/iScore/tests/avg_pix_tb.v,,avg_pix,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/modules/scale.v,1701986731,verilog,,C:/Users/evelynan/Desktop/iScore/tests/scale_tb.v,,scale,,,,,,,,
+C:/Users/evelynan/Desktop/iScore/tests/avg_pix_tb.v,1701991999,verilog,,,,avg_pix_tb,,,,,,,,
 C:/Users/evelynan/Desktop/iScore/tests/scale_tb.v,1701990891,verilog,,,,scale_tb,,,,,,,,
