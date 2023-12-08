@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../modules/char_display.v" \
+"../../../../../modules/counter_flop.v" \
+"../../../../../modules/ff_lib.v" \
+"../../../../../modules/tcgrom.v" \
+"../../../../../tests/counter_flop_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module char_display
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/char_display_tb.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module char_display_tb
