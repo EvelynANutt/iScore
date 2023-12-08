@@ -6,8 +6,8 @@ reg [10:0] x;
 reg [9:0] y;
 reg [8:0] char1, char2, char3, char4, char5,
     char6, char7, char8, char9, char10, char11, char12;
-reg pixel_on;
-wire expected;
+wire pixel_on;
+reg expected;
 
 title_display #(.X_COORD(11'd88), .Y_COORD(10'd32), .BOX_WIDTH(8'd40)) title_display_test (
     .x(x),
@@ -53,7 +53,7 @@ initial begin
     
     // Check for a pixel within the bounds of these boxes, but not on a char
     x = 11'd558;
-    y = 10'd38;
+    y = 10'd48;
     expected = 1'b0;
     #10
     $display("actual %b, expected %b", pixel_on, expected);
