@@ -7,6 +7,7 @@ module counter_flop_tb (
     reg rst;
     reg [10:0] x;
     reg [9:0] y;
+    reg [19:0] time_ns;
     wire [3:0] count_enable_out;
     wire [3:0] count_enable_out_2;
     wire pixel_on;
@@ -28,6 +29,7 @@ module counter_flop_tb (
         .rst(rst),
         .x(x),
         .y(y),
+        .time_ns(count_enable_in),
         .count_enable_out(count_enable_out),
         .pixel_on(pixel_on)
     );
@@ -38,6 +40,7 @@ module counter_flop_tb (
         .rst(rst),
         .x(x),
         .y(y),
+        .time_ns(count_enable_in),
         .count_enable_out(count_enable_out_2),
         .pixel_on(pixel_on_2)
     );
@@ -170,6 +173,52 @@ module counter_flop_tb (
             count_enable_in = count;
             #1;
         end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
+        for (count = 20'd0; count < 20'd1000010; count = count + 1'd1) begin
+            count_enable_in = count;
+            #1;
+        end
+        
 
         /* With this testbench, we will assume the complete functionality of the counter flop module
         implies the complete functionality of all instantiations of counter flop. */

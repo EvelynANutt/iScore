@@ -1,0 +1,14 @@
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  1, expected  1
+$finish called at time : 22000230 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 226
