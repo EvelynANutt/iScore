@@ -13,7 +13,8 @@ assign next_time_ns = time_ns + 20'd10;
 assign time_select = ((next_time_ns > 20'd999999) || reset_player || song_done) ? 20'd0 : next_time_ns;
 
 wire pixel_on_ms, pixel_on_hs, pixel_on_ts, pixel_on_s, pixel_on_tens, pixel_on_colon;
-wire next_count_ms, next_count_hs, next_count_ts, next_count_s, next_count_tens;
+wire [3:0] next_count_ms, next_count_hs, next_count_ts, next_count_s, next_count_tens;
+
 
 counter_flop #(.X_BOX(X_COORD), .Y_BOX(Y_COORD), .COUNT_SIZE(5'd20)) count_ms(
     .count_enable_in(time_ns),
@@ -21,6 +22,13 @@ counter_flop #(.X_BOX(X_COORD), .Y_BOX(Y_COORD), .COUNT_SIZE(5'd20)) count_ms(
     .rst(rst),
     .x(x),
     .y(y),
+    .time_ns(time_ns),
+    .time_ms(next_count_ms),
+    .time_hs(next_count_hs),
+    .time_ts(next_count_ts),
+    .time_s(next_count_s),
+    .time_tens(next_count_tens),
+    .digit(4'b0000),
     .count_enable_out(next_count_ms),
     .pixel_on(pixel_on_ms)
 );
@@ -31,6 +39,13 @@ counter_flop #(.X_BOX(X_COORD - (BOX_WIDTH * 4'd1)), .Y_BOX(Y_COORD), .COUNT_SIZ
     .rst(rst),
     .x(x),
     .y(y),
+    .time_ns(time_ns),
+    .time_ms(next_count_ms),
+    .time_hs(next_count_hs),
+    .time_ts(next_count_ts),
+    .time_s(next_count_s),
+    .time_tens(next_count_tens),
+    .digit(4'b0001),
     .count_enable_out(next_count_hs),
     .pixel_on(pixel_on_hs)
 );
@@ -41,6 +56,13 @@ counter_flop #(.X_BOX(X_COORD - (BOX_WIDTH * 4'd2)), .Y_BOX(Y_COORD), .COUNT_SIZ
     .rst(rst),
     .x(x),
     .y(y),
+    .time_ns(time_ns),
+    .time_ms(next_count_ms),
+    .time_hs(next_count_hs),
+    .time_ts(next_count_ts),
+    .time_s(next_count_s),
+    .time_tens(next_count_tens),
+    .digit(4'b0010),
     .count_enable_out(next_count_ts),
     .pixel_on(pixel_on_ts)
 );
@@ -51,6 +73,13 @@ counter_flop #(.X_BOX(X_COORD - (BOX_WIDTH * 4'd3) - 5'd20), .Y_BOX(Y_COORD), .C
     .rst(rst),
     .x(x),
     .y(y),
+    .time_ns(time_ns),
+    .time_ms(next_count_ms),
+    .time_hs(next_count_hs),
+    .time_ts(next_count_ts),
+    .time_s(next_count_s),
+    .time_tens(next_count_tens),
+    .digit(4'b0100),
     .count_enable_out(next_count_s),
     .pixel_on(pixel_on_s)
 );
@@ -61,6 +90,13 @@ counter_flop #(.X_BOX(X_COORD - (BOX_WIDTH * 4'd4) - 5'd20), .Y_BOX(Y_COORD), .C
     .rst(rst),
     .x(x),
     .y(y),
+    .time_ns(time_ns),
+    .time_ms(next_count_ms),
+    .time_hs(next_count_hs),
+    .time_ts(next_count_ts),
+    .time_s(next_count_s),
+    .time_tens(next_count_tens),
+    .digit(4'b1000),
     .count_enable_out(next_count_tens),
     .pixel_on(pixel_on_tens)
 );
