@@ -1,0 +1,495 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Dec  7 20:52:20 2023
+# Process ID: 4920
+# Current directory: C:/Users/evelynan/Desktop/iScore/iScore_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1776 C:\Users\evelynan\Desktop\iScore\iScore_proj\iScore_proj.xpr
+# Log file: C:/Users/evelynan/Desktop/iScore/iScore_proj/vivado.log
+# Journal file: C:/Users/evelynan/Desktop/iScore/iScore_proj\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/evelynan/Desktop/iScore/modules/beat.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/evelynan/Desktop/iScore/modules/dffre.v'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/evelynan/Desktop/iScore/modules/dffr.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "counter_flop_tb_behav -key {Behavioral:sim_1:Functional:counter_flop_tb} -tclbatch {counter_flop_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source counter_flop_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'counter_flop_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 713.566 ; gain = 17.227
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/ms_test/counter/d}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/ms_test/counter/q}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/ms_test/prev_count}} 
+run 1 s
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  0, expected  9
+actual  1, expected  0
+actual  0, expected  1
+run: Time (s): cpu = 00:00:40 ; elapsed = 00:00:36 . Memory (MB): peak = 731.215 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module char_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/counter_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/ff_lib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dffr
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tcgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffre(WIDTH=4)
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot counter_flop_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 731.215 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 s
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  1, expected  1
+run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 731.215 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/counter/d}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/counter/q}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  1, expected  1
+run: Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 822.992 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module char_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/counter_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/ff_lib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dffr
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tcgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffre(WIDTH=4)
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot counter_flop_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 822.992 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 s
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  0, expected  1
+$finish called at time : 13000140 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 177
+run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:36 . Memory (MB): peak = 822.992 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module char_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/counter_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/ff_lib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dffr
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tcgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop_tb
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 822.992 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '9' seconds
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 822.992 ; gain = 0.000
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffre(WIDTH=4)
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot counter_flop_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 822.992 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 s
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  0, expected  1
+$finish called at time : 13000140 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 180
+run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 822.992 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/time_ns}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/count_enable_in}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/small_enable_num}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/big_enable_num}} 
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/counter_flop_tb/hs_test/actual_enable}} 
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 822.992 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  0, expected  1
+$finish called at time : 13000140 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 180
+run: Time (s): cpu = 00:01:07 ; elapsed = 00:01:05 . Memory (MB): peak = 822.992 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module char_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/counter_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/ff_lib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dffr
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tcgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffre(WIDTH=4)
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot counter_flop_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 822.992 ; gain = 0.000
+run all
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+restart: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 822.992 ; gain = 0.000
+run all
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  1, expected  1
+$finish called at time : 13000140 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 180
+run: Time (s): cpu = 00:01:06 ; elapsed = 00:01:04 . Memory (MB): peak = 822.992 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_flop_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj counter_flop_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/char_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module char_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/counter_flop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/ff_lib.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dff
+INFO: [VRFC 10-311] analyzing module dffr
+INFO: [VRFC 10-311] analyzing module dffre
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/modules/tcgrom.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tcgrom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module counter_flop_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim'
+"xelab -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto f21a3630a32f4a38a454133f1c196feb --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot counter_flop_tb_behav xil_defaultlib.counter_flop_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffre(WIDTH=4)
+Compiling module xil_defaultlib.tcgrom
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011001101...
+Compiling module xil_defaultlib.char_display(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop(X_BOX=11'b011000000...
+Compiling module xil_defaultlib.counter_flop_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot counter_flop_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 822.992 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run all
+actual  1, expected  1
+actual  2, expected  2
+actual  3, expected  3
+actual  4, expected  4
+actual  5, expected  5
+actual  6, expected  6
+actual  7, expected  7
+actual  8, expected  8
+actual  9, expected  9
+actual  0, expected  0
+actual  1, expected  1
+$finish called at time : 22000230 ns : File "C:/Users/evelynan/Desktop/iScore/tests/counter_flop_tb.v" Line 226
+run: Time (s): cpu = 00:01:49 ; elapsed = 00:01:48 . Memory (MB): peak = 822.992 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed

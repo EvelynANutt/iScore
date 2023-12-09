@@ -1,8 +1,23 @@
-module anti_aliasing (
+module anti_aliasing # (parameter
+    SCREEN_WIDTH = 0,
+    SCREEN_HEIGHT = 0,
+    SCREEN_WIDTH_BITS = 0,
+    SCREEN_HEIGHT_BITS = 0,
+    DISPLAYED_BEATS = 0,
+    SIMULTANEOUS_NOTES = 0,
+    BEAT_DURATION = 0,
+    BEAT_BITS = 0,
+    NOTE_BITS = 0) (
+    input wire reset_player, song_done, play, clk, rst,
+    input [1:0] song_index, instrument_type,
     input wire [10:0] x,
     input wire [9:0] y,
+    input wire [NOTE_STATE_BITS-1:0] notes [NOTES_STATE_SIZE-1:0],
     output reg [7:0] r_new, g_new, b_new
 );
+
+localparam NOTE_STATE_BITS = NOTE_BITS+2*BEAT_BITS;
+localparam NOTES_STATE_SIZE = 2*DISPLAYED_BEATS*SIMULTANEOUS_NOTES;
 
 wire [7:0] original_r, original_g, original_b,
     top_left_r, top_left_g, top_left_b,
@@ -18,11 +33,29 @@ wire [7:0] red_a, red_b, red_c, red_d, red_e, red_f, red_g, red_h,
     green_a, green_b, green_c, green_d, green_e, green_f, green_g, green_h,
     blue_a, blue_b, blue_c, blue_d, blue_e, blue_f, blue_g, blue_h;
     
-parameter HALF = 3'd2;
-parameter QUARTER = 3'd4;
+localparam HALF = 3'd2;
+localparam QUARTER = 3'd4;
 
 // original pixel
-display_pixel original_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) original_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(x),
     .y(y),
     .r(original_r),
@@ -36,7 +69,25 @@ wire [9:0] top_left_y = y - 1'b1;
 assign top_left_x = x - 1'b1;
 assign top_left_y = y - 1'b1;
 
-display_pixel top_left_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) top_left_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(top_left_x),
     .y(top_left_y),
     .r(top_left_r),
@@ -57,7 +108,25 @@ scale #(QUARTER) top_left_scale (
 wire [9:0] top_middle_y;
 assign top_middle_y = y - 1'b1;
 
-display_pixel top_middle_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) top_middle_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(x),
     .y(top_middle_y),
     .r(top_middle_r),
@@ -80,7 +149,25 @@ wire [9:0] top_right_y;
 assign top_right_x = x + 1'b1;
 assign top_right_y = y - 1'b1;
 
-display_pixel top_right_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) top_right_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(top_right_x),
     .y(top_right_y),
     .r(top_right_r),
@@ -101,7 +188,25 @@ scale #(QUARTER) top_right_scale (
 wire [10:0] right_x;
 assign right_x = x + 1'b1;
 
-display_pixel right_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) right_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(right_x),
     .y(y),
     .r(right_r),
@@ -124,7 +229,25 @@ wire [9:0] bottom_right_y;
 assign bottom_right_x = x + 1'b1;
 assign bottom_right_y = y + 1'b1;
 
-display_pixel bottom_right_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) bottom_right_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(bottom_right_x),
     .y(bottom_right_y),
     .r(bottom_right_r),
@@ -145,7 +268,25 @@ scale #(QUARTER) bottom_right_scale (
 wire [9:0] bottom_middle_y;
 assign bottom_middle_y = y + 1'b1;
 
-display_pixel bottom_middle_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) bottom_middle_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(x),
     .y(bottom_middle_y),
     .r(bottom_middle_r),
@@ -168,7 +309,25 @@ wire [9:0] bottom_left_y;
 assign bottom_left_x = x - 1'b1;
 assign bottom_left_y = y + 1'b1;
 
-display_pixel bottom_left_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) bottom_left_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(bottom_left_x),
     .y(bottom_left_y),
     .r(bottom_left_r),
@@ -189,7 +348,25 @@ scale #(QUARTER) bottom_left_scale (
 wire [10:0] left_x;
 assign left_x = x - 1'b1;
 
-display_pixel left_pixel (
+display_pixel #(
+    .SCREEN_WIDTH(SCREEN_WIDTH),
+    .SCREEN_HEIGHT(SCREEN_HEIGHT),
+    .SCREEN_WIDTH_BITS(SCREEN_WIDTH_BITS),
+    .SCREEN_HEIGHT_BITS(SCREEN_HEIGHT_BITS),
+    .DISPLAYED_BEATS(DISPLAYED_BEATS),
+    .SIMULTANEOUS_NOTES(SIMULTANEOUS_NOTES),
+    .BEAT_DURATION(BEAT_DURATION),
+    .BEAT_BITS(BEAT_BITS),
+    .NOTE_BITS(NOTE_BITS) 
+    ) left_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .notes(notes),
     .x(left_x),
     .y(y),
     .r(left_r),

@@ -7,6 +7,8 @@ module display #(parameter
     BEAT_BITS = 0, // Number of bits for the current beat in a song
     NOTE_BITS = 0 // Number of bits for a note
 ) (
+    input wire reset_player, song_done, play, clk, rst,
+    input wire [1:0] song_index, instrument_type,
     input wire [10:0] x, // Requested x coordinate
     input wire [9:0] y, // Requested y coordinate
     // Array of all possibly displayable (notes, start beat, duration) triples
@@ -37,7 +39,21 @@ module display #(parameter
         .BEAT_DURATION(BEAT_DURATION),
         .BEAT_BITS(BEAT_BITS),
         .NOTE_BITS(NOTE_BITS)
-    ) display_pixel (.x(x - SCREEN_START_X), .y(y - SCREEN_START_Y), .notes(notes), .r(r_tmp), .g(g_tmp), .b(b_tmp));
+    ) display_pixel (
+    .reset_player(reset_player),
+    .song_done(song_done),
+    .play(play),
+    .clk(clk),
+    .rst(rst),
+    .song_index(song_index),
+    .instrument_type(instrument_type),
+    .x(x - SCREEN_START_X),
+    .y(y - SCREEN_START_Y),
+    .notes(notes),
+    .r(r_tmp),
+    .g(g_tmp),
+    .b(b_tmp)
+    );
 
     wire valid_pixel = x >= SCREEN_START_X && x < SCREEN_START_X + SCREEN_WIDTH
                       && y >= SCREEN_START_Y && y < SCREEN_START_Y + SCREEN_HEIGHT;

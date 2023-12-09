@@ -2,59 +2,13 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Dec  7 20:52:20 2023
-# Process ID: 4920
-# Current directory: C:/Users/evelynan/Desktop/iScore/iScore_proj
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1776 C:\Users\evelynan\Desktop\iScore\iScore_proj\iScore_proj.xpr
-# Log file: C:/Users/evelynan/Desktop/iScore/iScore_proj/vivado.log
-# Journal file: C:/Users/evelynan/Desktop/iScore/iScore_proj\vivado.jou
+# Start of session at: Fri Dec  8 14:32:17 2023
+# Process ID: 10764
+# Current directory: C:/Users/evelynan/iScore/iScore_proj
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3340 C:\Users\evelynan\iScore\iScore_proj\iScore_proj.xpr
+# Log file: C:/Users/evelynan/iScore/iScore_proj/vivado.log
+# Journal file: C:/Users/evelynan/iScore/iScore_proj\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/evelynan/Desktop/iScore/iScore_proj/iScore_proj.xpr
+open_project C:/Users/evelynan/iScore/iScore_proj/iScore_proj.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-source counter_flop_tb.tcl
-restart
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/ms_test/counter/d}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/ms_test/counter/q}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/ms_test/prev_count}} 
-run 1 s
-relaunch_sim
-restart
-run 1 s
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/counter/d}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/counter/q}} 
-restart
-run all
-relaunch_sim
-restart
-run 1 s
-relaunch_sim
-restart
-run 1 s
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/time_ns}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/count_enable_in}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/small_enable_num}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/big_enable_num}} 
-current_wave_config {Untitled 1}
-add_wave {{/counter_flop_tb/hs_test/actual_enable}} 
-relaunch_sim
-restart
-run all
-relaunch_sim
-run all
-restart
-run all
-relaunch_sim
-restart
-run all
-close_sim
